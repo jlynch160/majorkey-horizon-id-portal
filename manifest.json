@@ -1,0 +1,31 @@
+{
+  "name": "MajorKey Horizon ID",
+  "short_name": "Horizon ID",
+  "description": "The Entra admin cockpit. Sits above your tenant via Microsoft Graph and makes Entra dramatically easier to administer.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#0b2545",
+  "background_color": "#f5f7fa",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='44' fill='%230b2545'/%3E%3Cpath d='M48 124 L48 68 L68 68 L96 108 L124 68 L144 68 L144 124 L124 124 L124 90 L100 124 L92 124 L68 90 L68 124 Z' fill='%2300d394'/%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='112' fill='%230b2545'/%3E%3Cpath d='M128 332 L128 180 L182 180 L256 288 L330 180 L384 180 L384 332 L330 332 L330 240 L268 332 L244 332 L182 240 L182 332 Z' fill='%2300d394'/%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    { "name": "Approvals queue",  "url": "./index.html#approvals",  "description": "Pending approvals across PIM and access packages" },
+    { "name": "Risky sign-ins",   "url": "./index.html#idprotect",  "description": "Identity Protection signals" },
+    { "name": "Mobile triage",    "url": "./index.html#mobile",     "description": "On-call view for approvals + alerts" },
+    { "name": "Connect tenant",   "url": "./index.html#connect",    "description": "Onboard a new Entra tenant" }
+  ]
+}
