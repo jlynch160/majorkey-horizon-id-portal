@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>MajorKey Horizon ID — admin portal for Microsoft Entra</title>
+<title>MajorKey Horizon Ops — admin portal for Microsoft Entra</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%230b2545'/%3E%3Cpath d='M10 26 L10 14 L14 14 L20 22 L26 14 L30 14 L30 26 L26 26 L26 19 L21 26 L19 26 L14 19 L14 26 Z' fill='%2300d394'/%3E%3C/svg%3E"/>
 <link rel="manifest" href="manifest.json"/>
 <meta name="theme-color" content="#0b2545"/>
-<meta name="description" content="MajorKey Horizon ID — the admin portal for Microsoft Entra. Day-one ready. Real workflows, real Graph integration, real audit. Faster, smarter, AI-grounded, automation-first."/>
+<meta name="description" content="MajorKey Horizon Ops — the admin portal for Microsoft Entra. Day-one ready. Real workflows, real Graph integration, real audit. Faster, smarter, AI-grounded, automation-first."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -1871,7 +1871,7 @@ input:focus-visible, select:focus-visible {
     <div class="logo-mark">M</div>
     <div class="logo-text">
       <div class="brand">MajorKey</div>
-      <div class="product">Horizon ID</div>
+      <div class="product">Horizon Ops</div>
     </div>
   </div>
 
@@ -2080,7 +2080,7 @@ input:focus-visible, select:focus-visible {
 <div class="tour-overlay" id="tourOverlay" role="dialog" aria-label="Guided tour">
   <div class="tour-row">
     <div class="tour-icon">✦</div>
-    <div class="tour-msg" id="tourMsg">Welcome to Horizon ID.</div>
+    <div class="tour-msg" id="tourMsg">Welcome to Horizon Ops.</div>
   </div>
   <div class="tour-foot">
     <span class="tour-step" id="tourStep">1 of 6</span>
@@ -2227,7 +2227,7 @@ const WS_TABS = {
     tabs:[
       { route:'logs',      label:'Audit', icon:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/>' },
       { route:'signins',   label:'Sign-ins', icon:'<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/>' },
-      { route:'selfaudit', label:'Horizon ID actions', icon:'<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>' }
+      { route:'selfaudit', label:'Horizon Ops actions', icon:'<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>' }
     ]
   },
   automation: {
@@ -2373,7 +2373,7 @@ window.optimisticDecide = function(btn, action, id, requester, scope) {
 
 window.openWhatsNew = function() {
   openDetail({
-    title: "What's new in Horizon ID",
+    title: "What's new in Horizon Ops",
     sub: 'Recent releases · v0.5.0',
     badge: '<span class="pill pill-mint">Latest</span>',
     icon: '✦',
@@ -2432,7 +2432,7 @@ window.simulateEvent = function(kind) {
 
 function copilotBar(opts) {
   opts = opts || {};
-  const placeholder = opts.placeholder || 'Ask Horizon ID — "show risky sign-ins from outside the US in the last 24h"';
+  const placeholder = opts.placeholder || 'Ask Horizon Ops — "show risky sign-ins from outside the US in the last 24h"';
   const chips = opts.chips || ['Show users with stale access', 'Who activated PIM today?', 'Forecast joiners next week', 'What changed in CA-007 last 7 days?', 'Find apps with secrets expiring ≤30d'];
   return `<div class="copilot">
     <div class="copilot-row">
@@ -2674,7 +2674,7 @@ window.copilotAsk = function(q) {
     : '';
 
   openDetail({
-    title: 'Horizon ID Copilot',
+    title: 'Horizon Ops Copilot',
     sub: q,
     badge: '<span class="pill pill-plum">✦ AI · ' + result.latency + 'ms</span>',
     icon: '✦',
@@ -4609,7 +4609,7 @@ registerRoute('settings', () => {
       <div class="card">
         <div class="card-header"><div class="card-title">Administrators</div><button class="btn btn-sm">Add admin</button></div>
         <div class="card-body" style="padding:0;">
-          ${[['Priya Iyer','IT Director · Global Admin (eligible)'],['Diane Park','User Admin (active)'],['Sara Wallace','Security Admin (eligible)'],['Hana Okafor','Privileged Role Admin (eligible)'],['Jeff Lynch','Identity Admin · Horizon ID']].map(([n,r]) => `
+          ${[['Priya Iyer','IT Director · Global Admin (eligible)'],['Diane Park','User Admin (active)'],['Sara Wallace','Security Admin (eligible)'],['Hana Okafor','Privileged Role Admin (eligible)'],['Jeff Lynch','Identity Admin · Horizon Ops']].map(([n,r]) => `
           <div style="padding:10px 18px;border-bottom:1px solid var(--line);" class="flex-c gap-3">${av(n)}<div style="flex:1;"><div style="font-weight:600;font-size:12.5px;">${n}</div><div class="muted" style="font-size:11.5px;">${r}</div></div></div>`).join('')}
         </div>
       </div>
@@ -6425,7 +6425,7 @@ registerRoute('connect', () => `
     ${hero({
       eyebrow:'Onboard a tenant',
       title:'Sit above your Entra tenant',
-      sub:'Horizon ID reads and writes your Entra tenant through Microsoft Graph — your data stays in Entra, your admins work in Horizon ID. Sign in once as Global Admin, grant least-privilege Graph permissions, and your team gets the cockpit Entra was missing.',
+      sub:'Horizon Ops reads and writes your Entra tenant through Microsoft Graph — your data stays in Entra, your admins work in Horizon Ops. Sign in once as Global Admin, grant least-privilege Graph permissions, and your team gets the cockpit Entra was missing.',
       stats:[
         { label:'Setup time', value:'~4 min' },
         { label:'Permissions',value:'Read + scoped write' },
@@ -6436,7 +6436,7 @@ registerRoute('connect', () => `
 
     <div class="row row-3 mb-4">
       ${[
-        ['1','Sign in as Global Admin','Authenticate via Microsoft OAuth in your tenant. Entra remains the source of truth — Horizon ID is the cockpit on top.','#7c3aed'],
+        ['1','Sign in as Global Admin','Authenticate via Microsoft OAuth in your tenant. Entra remains the source of truth — Horizon Ops is the cockpit on top.','#7c3aed'],
         ['2','Review & grant consent','You choose the scope: read-only at first if you want, then enable writes per surface. One-click revoke at any time.','#0ea5e9'],
         ['3','Sync & start operating','Initial directory snapshot loads in ~2 minutes. Live deltas via Graph change-notifications. Your data never leaves Entra.','#00d394']
       ].map(([n,t,d,c]) => `
@@ -6451,13 +6451,13 @@ registerRoute('connect', () => `
 
     <div class="card mb-4">
       <div class="card-header">
-        <div><div class="card-title">Architecture · how Horizon ID sits above Entra</div><div class="card-sub">Your tenant remains the system of record. Horizon ID is the operator surface.</div></div>
+        <div><div class="card-title">Architecture · how Horizon Ops sits above Entra</div><div class="card-sub">Your tenant remains the system of record. Horizon Ops is the operator surface.</div></div>
       </div>
       <div class="card-body">
         <div class="pipeline" style="background:linear-gradient(180deg,var(--surface-2),#fff);border:1px solid var(--line);border-radius:8px;">
           <div class="pipe-node" style="border-color:#7c3aed;background:var(--plum-soft);">
             <div class="pipe-node-type">Operator surface</div>
-            <div class="pipe-node-name">Horizon ID</div>
+            <div class="pipe-node-name">Horizon Ops</div>
             <div class="pipe-node-meta">9 workspaces · ⌘K · Copilot · automation hub</div>
           </div>
           <div class="pipe-edge"></div>
@@ -6481,13 +6481,13 @@ registerRoute('connect', () => `
         </div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;font-size:12.5px;">
           <div style="padding:12px;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;">
-            <strong>Your data stays in Entra.</strong> Horizon ID is stateless on the read path — every list, every drawer, every Copilot answer is a Graph query against your live tenant.
+            <strong>Your data stays in Entra.</strong> Horizon Ops is stateless on the read path — every list, every drawer, every Copilot answer is a Graph query against your live tenant.
           </div>
           <div style="padding:12px;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;">
-            <strong>Microsoft remains your source of truth.</strong> Conditional Access still evaluates in Entra. PIM still activates in Entra. Horizon ID just makes it dramatically easier to drive.
+            <strong>Microsoft remains your source of truth.</strong> Conditional Access still evaluates in Entra. PIM still activates in Entra. Horizon Ops just makes it dramatically easier to drive.
           </div>
           <div style="padding:12px;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;">
-            <strong>You can revoke anytime.</strong> One click in Entra app registrations removes Horizon ID's access. No data lock-in, no migration, no risk.
+            <strong>You can revoke anytime.</strong> One click in Entra app registrations removes Horizon Ops's access. No data lock-in, no migration, no risk.
           </div>
         </div>
       </div>
@@ -7091,7 +7091,7 @@ registerRoute('trust', () => `
     </div>
     <div class="row row-2 mb-4">
       <div class="card">
-        <div class="card-header"><div class="card-title">What Horizon ID can do in your tenant</div><span class="pill pill-mint">Least privilege</span></div>
+        <div class="card-header"><div class="card-title">What Horizon Ops can do in your tenant</div><span class="pill pill-mint">Least privilege</span></div>
         <table class="tbl">
           <thead><tr><th>Scope</th><th>Type</th><th>Used for</th><th>Calls · 24h</th></tr></thead>
           <tbody>
@@ -7111,9 +7111,9 @@ registerRoute('trust', () => `
         </table>
       </div>
       <div class="card">
-        <div class="card-header"><div class="card-title">What Horizon ID does NOT touch</div><span class="pill pill-mint">Verified</span></div>
+        <div class="card-header"><div class="card-title">What Horizon Ops does NOT touch</div><span class="pill pill-mint">Verified</span></div>
         <div style="padding:0;">
-          ${[['Your password store','Microsoft retains all credentials · we never see them'],['Token signing keys','Microsoft owns · CAE invalidates on revoke'],['Mailbox content','No Mail.Read scope requested · ever'],['File content','No Files.Read scope requested · ever'],['Teams chat content','No Chat.Read scope requested · ever'],['Defender raw signals','Read aggregated risk only · not raw telemetry'],['Customer Lockbox','Outside Horizon ID scope · Microsoft-only'],['Billing + subscriptions','Outside scope · admin.microsoft.com still required']].map(([k,v]) => `
+          ${[['Your password store','Microsoft retains all credentials · we never see them'],['Token signing keys','Microsoft owns · CAE invalidates on revoke'],['Mailbox content','No Mail.Read scope requested · ever'],['File content','No Files.Read scope requested · ever'],['Teams chat content','No Chat.Read scope requested · ever'],['Defender raw signals','Read aggregated risk only · not raw telemetry'],['Customer Lockbox','Outside Horizon Ops scope · Microsoft-only'],['Billing + subscriptions','Outside scope · admin.microsoft.com still required']].map(([k,v]) => `
           <div style="padding:12px 18px;border-bottom:1px solid var(--line);" class="flex-b">
             <div><div style="font-weight:600;font-size:12.5px;">${k}</div><div class="muted" style="font-size:11.5px;">${v}</div></div>
             <span class="pill pill-mint">✓ Excluded</span>
@@ -7136,12 +7136,12 @@ registerRoute('trust', () => `
         <div class="card-header"><div class="card-title">Revoke access</div><span class="pill pill-rose">One-click</span></div>
         <div class="card-body">
           <div style="font-size:13px;line-height:1.7;color:var(--text-2);margin-bottom:14px;">
-            Revoking the Horizon ID app registration in Microsoft Entra immediately:
+            Revoking the Horizon Ops app registration in Microsoft Entra immediately:
             <ul style="margin:8px 0 0 20px;line-height:1.9;">
               <li>Stops all Graph reads + writes within seconds (CAE-propagated)</li>
-              <li>Invalidates all Horizon ID sessions</li>
+              <li>Invalidates all Horizon Ops sessions</li>
               <li>Leaves your Entra tenant <strong>completely unchanged</strong> — every user, group, policy, and entitlement is untouched</li>
-              <li>Removes Horizon ID from Recent Activity in Entra app registrations after 30 days</li>
+              <li>Removes Horizon Ops from Recent Activity in Entra app registrations after 30 days</li>
             </ul>
           </div>
           <div class="flex gap-2">
@@ -7191,14 +7191,14 @@ registerRoute('selfaudit', () => `
     ${activityHero('selfaudit')}
     ${moduleTabs('selfaudit')}
     <div class="row row-4 mb-4">
-      <div class="kpi"><div class="kpi-label">Actions · 24h</div><div class="kpi-value tabular">${SELF_AUDIT.length}</div><div class="muted" style="font-size:11.5px;margin-top:4px;">via Horizon ID only</div></div>
+      <div class="kpi"><div class="kpi-label">Actions · 24h</div><div class="kpi-value tabular">${SELF_AUDIT.length}</div><div class="muted" style="font-size:11.5px;margin-top:4px;">via Horizon Ops only</div></div>
       <div class="kpi"><div class="kpi-label">Human admins · active</div><div class="kpi-value">5</div><div class="muted" style="font-size:11.5px;margin-top:4px;">+ 3 service principals</div></div>
       <div class="kpi"><div class="kpi-label">Graph writes</div><div class="kpi-value tabular">${SELF_AUDIT.filter(a => a.graph.startsWith('PATCH')||a.graph.startsWith('POST')||a.graph.startsWith('DELETE')).length}</div><div class="muted" style="font-size:11.5px;margin-top:4px;">all signed + persisted</div></div>
       <div class="kpi"><div class="kpi-label">Retention</div><div class="kpi-value">7 years</div><div class="muted" style="font-size:11.5px;margin-top:4px;">SOX / CJIS compliant</div></div>
     </div>
     <div class="card mb-4">
       <div class="card-header">
-        <div><div class="card-title">Audit of admin actions taken via Horizon ID</div><div class="card-sub">Separate from Entra audit log · cryptographically signed · exportable as SOX/CJIS evidence</div></div>
+        <div><div class="card-title">Audit of admin actions taken via Horizon Ops</div><div class="card-sub">Separate from Entra audit log · cryptographically signed · exportable as SOX/CJIS evidence</div></div>
         <div class="flex gap-2"><button class="btn btn-sm" onclick="toast({kind:'success',title:'Exported',msg:'90-day evidence pack generated · sha256 manifest included.'});">Export evidence pack</button></div>
       </div>
       <table class="tbl">
@@ -7220,7 +7220,7 @@ registerRoute('selfaudit', () => `
     <div class="card">
       <div class="card-header"><div class="card-title">Why this is separate from the Entra audit log</div></div>
       <div class="card-body" style="font-size:13px;line-height:1.7;color:var(--text-2);">
-        The Entra audit log records what changed in your tenant. This log records <strong>who used Horizon ID to make those changes</strong>, with the persona they were operating under, the local UI action they took, and the resulting Graph call. For SOX, CJIS, and HIPAA evidence, you need both: Entra proves "this group membership changed at 10:34"; Horizon ID proves "Diane Park bulk-approved 47 reviews in PKG-CASE-002 acting as Identity Admin via session sess-x9f82j from 73.45.118.22."
+        The Entra audit log records what changed in your tenant. This log records <strong>who used Horizon Ops to make those changes</strong>, with the persona they were operating under, the local UI action they took, and the resulting Graph call. For SOX, CJIS, and HIPAA evidence, you need both: Entra proves "this group membership changed at 10:34"; Horizon Ops proves "Diane Park bulk-approved 47 reviews in PKG-CASE-002 acting as Identity Admin via session sess-x9f82j from 73.45.118.22."
       </div>
     </div>
   </div>`);
@@ -7233,7 +7233,7 @@ registerRoute('appregscript', () => `
     ${settingsHero('appregscript')}
     ${moduleTabs('appregscript')}
     <div class="card mb-4">
-      <div class="card-header"><div><div class="card-title">App registration setup</div><div class="card-sub">Generate the PowerShell to provision Horizon ID in your Entra tenant — runs in 2 minutes vs 30 by hand</div></div></div>
+      <div class="card-header"><div><div class="card-title">App registration setup</div><div class="card-sub">Generate the PowerShell to provision Horizon Ops in your Entra tenant — runs in 2 minutes vs 30 by hand</div></div></div>
       <div class="card-body">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;">
           <div>
@@ -7269,7 +7269,7 @@ registerRoute('appregscript', () => `
     <div class="card">
       <div class="card-header"><div class="card-title">Manual setup checklist (if you prefer)</div></div>
       <div style="padding:0;">
-        ${['Sign in to entra.microsoft.com as Global Admin','App registrations → New registration → name: Horizon ID','Single-page application redirect URI: this URL','API permissions → Microsoft Graph → Application permissions → add the 10 scopes shown above','Grant admin consent for tenant','Copy Application (client) ID and Tenant ID into Horizon ID Connect Tenant flow','Test sign-in via Connect Tenant wizard'].map((s,i) => `<div style="padding:11px 18px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:24px 1fr;gap:10px;"><div style="width:20px;height:20px;border-radius:50%;background:var(--mint);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;">${i+1}</div><div style="font-size:12.5px;">${s}</div></div>`).join('')}
+        ${['Sign in to entra.microsoft.com as Global Admin','App registrations → New registration → name: Horizon Ops','Single-page application redirect URI: this URL','API permissions → Microsoft Graph → Application permissions → add the 10 scopes shown above','Grant admin consent for tenant','Copy Application (client) ID and Tenant ID into Horizon Ops Connect Tenant flow','Test sign-in via Connect Tenant wizard'].map((s,i) => `<div style="padding:11px 18px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:24px 1fr;gap:10px;"><div style="width:20px;height:20px;border-radius:50%;background:var(--mint);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;">${i+1}</div><div style="font-size:12.5px;">${s}</div></div>`).join('')}
       </div>
     </div>
   </div>`);
@@ -7377,18 +7377,18 @@ window.regenerateAppRegScript = function() {
   const writeScopes = ['User.ReadWrite.All','Group.ReadWrite.All'];
   const fullScopes = ['AppRoleAssignment.ReadWrite.All','RoleManagement.ReadWrite.Directory'];
   const scopes = tier === 'ro' ? baseScopes : tier === 'rw' ? [...baseScopes, ...writeScopes] : [...baseScopes, ...writeScopes, ...fullScopes];
-  const script = `# MajorKey Horizon ID · app registration setup
+  const script = `# MajorKey Horizon Ops · app registration setup
 # Tenant: ${tenant}
 # Cloud:  ${cloud}  (${cloudMap[cloud]} environment)
 # Tier:   ${tier === 'ro' ? 'Read-only' : tier === 'rw' ? 'Read + scoped write' : 'Full admin (PIM-enabled)'}
-# Generated by Horizon ID · run in PowerShell with the Microsoft.Graph module installed
+# Generated by Horizon Ops · run in PowerShell with the Microsoft.Graph module installed
 
 # 1. Connect to your tenant
 Install-Module Microsoft.Graph -Scope CurrentUser -Force
 Connect-MgGraph -TenantId "${tenant}" -Environment ${cloudMap[cloud]} -Scopes "Application.ReadWrite.All","DelegatedPermissionGrant.ReadWrite.All","AppRoleAssignment.ReadWrite.All"
 
 # 2. Create the app registration
-$app = New-MgApplication -DisplayName "MajorKey Horizon ID" \`
+$app = New-MgApplication -DisplayName "MajorKey Horizon Ops" \`
   -SignInAudience "AzureADMyOrg" \`
   -Spa @{ RedirectUris = @("${redirect}") }
 $appId = $app.AppId
@@ -7412,15 +7412,15 @@ foreach ($scopeName in $scopes) {
     }
 }
 
-# 5. Output Horizon ID config
+# 5. Output Horizon Ops config
 Write-Host ""
-Write-Host "===== Paste these into Horizon ID Connect Tenant =====" -ForegroundColor Cyan
+Write-Host "===== Paste these into Horizon Ops Connect Tenant =====" -ForegroundColor Cyan
 Write-Host "Tenant ID:        ${tenant}"
 Write-Host "Application ID:   $appId"
 Write-Host "Authority:        https://login.microsoftonline.${cloud === 'commercial' ? 'com' : cloud === 'gcch' ? 'us' : cloud === 'dod' ? 'us' : 'com'}/${tenant}"
 Write-Host "Redirect URI:     ${redirect}"
 Write-Host ""
-Write-Host "Done. Sign in at ${redirect} to start using Horizon ID." -ForegroundColor Green`;
+Write-Host "Done. Sign in at ${redirect} to start using Horizon Ops." -ForegroundColor Green`;
   const out = document.getElementById('appregScriptOut');
   if (out) out.textContent = script;
 };
@@ -7441,7 +7441,7 @@ window.attemptMsalSignIn = async function() {
     toast({kind:'success',title:'Signed in as ' + result.account.username,msg:'Token acquired · ready to wire Graph queries.'});
   } catch (e) {
     if (e.errorCode === 'unauthorized_client' || (e.message && e.message.includes('AADSTS700016'))) {
-      toast({kind:'warn',title:'Replace the placeholder client ID',msg:'MSAL loaded successfully but the app reg is a stub. Run the setup script to provision Horizon ID in your tenant.'});
+      toast({kind:'warn',title:'Replace the placeholder client ID',msg:'MSAL loaded successfully but the app reg is a stub. Run the setup script to provision Horizon Ops in your tenant.'});
     } else if (e.errorCode === 'user_cancelled' || (e.message && e.message.toLowerCase().includes('cancel'))) {
       toast({kind:'info',title:'Sign-in cancelled',msg:'No tokens acquired · safe to retry.'});
     } else {
@@ -7464,7 +7464,7 @@ registerRoute('landing', () => `
       <div class="hero-content" style="flex-direction:column;align-items:center;text-align:center;">
         <div style="flex:1;">
           <div class="hero-eyebrow" style="justify-content:center;"><span class="live-dot"></span>The Entra admin cockpit</div>
-          <div class="hero-title" style="font-size:48px;margin-bottom:14px;">Horizon ID</div>
+          <div class="hero-title" style="font-size:48px;margin-bottom:14px;">Horizon Ops</div>
           <div class="hero-sub" style="font-size:16px;max-width:700px;margin:0 auto;">Sit above your Microsoft Entra tenant. Make every identity admin task faster, smarter, and provable. Same source of truth — completely different operator experience.</div>
         </div>
       </div>
@@ -7511,7 +7511,7 @@ registerRoute('landing', () => `
           <div class="pipe-edge"></div>
           <div class="pipe-node" style="border-color:#7c3aed;background:var(--plum-soft);">
             <div class="pipe-node-type">Cockpit</div>
-            <div class="pipe-node-name">Horizon ID</div>
+            <div class="pipe-node-name">Horizon Ops</div>
             <div class="pipe-node-meta">9 workspaces · ⌘K · Copilot · automation</div>
           </div>
           <div class="pipe-edge"></div>
@@ -7606,7 +7606,7 @@ window.clearBulk = function(key) {
 };
 window.bulkAction = function(label) {
   const n = document.querySelectorAll('.bulk-check[data-bulk="usrBulk"]:checked').length;
-  toast({kind:'success',title:label,msg:'Applied to '+n+' selected · all changes recorded in Horizon ID audit log.'});
+  toast({kind:'success',title:label,msg:'Applied to '+n+' selected · all changes recorded in Horizon Ops audit log.'});
   clearBulk('usrBulk');
 };
 window.filterIdentities = function(text) {
@@ -7650,7 +7650,7 @@ const QUICK_CREATE = {
   policy:  { title:'New Conditional Access policy', sub:'Created in report-only by default',          route:'ca',         fields:['Name','Users / groups','Cloud apps','Conditions (location, risk, device)','Grant controls','State (report-only / on)'] },
   review:  { title:'New access review',            sub:'Schedule a recurring or one-time campaign',  route:'governance', fields:['Name','Scope (group / package / role)','Reviewers','Cadence','Auto-apply decisions'] },
   appreg:  { title:'New app registration',         sub:'Generates the PowerShell setup script',      route:'appregscript', fields:['App name','Tenant ID','Cloud (Commercial / GCC / GCC High / DoD)','Permissions tier','Redirect URI'] },
-  webhook: { title:'New webhook destination',      sub:'Stream Horizon ID events out',              route:'webhooks',   fields:['Destination type (Slack / Teams / SIEM / HTTP)','URL','Events to send','Severity filter','Retry policy'] },
+  webhook: { title:'New webhook destination',      sub:'Stream Horizon Ops events out',              route:'webhooks',   fields:['Destination type (Slack / Teams / SIEM / HTTP)','URL','Events to send','Severity filter','Retry policy'] },
   view:    { title:'Save current view',             sub:'Bookmark the current filter set',            route:'savedviews', fields:['Name','Workspace','Filter snapshot','Sharing (personal / team)','Auto-refresh interval'] }
 };
 window.quickCreate = function(kind) {
@@ -7666,7 +7666,7 @@ window.quickCreate = function(kind) {
     body: `
     <div class="card mt-3 mb-3">
       <div class="card-body">
-        <div style="font-size:12.5px;color:var(--text-3);margin-bottom:14px;">Fill in the basics. Horizon ID executes the create via Microsoft Graph and writes a self-audit entry on save.</div>
+        <div style="font-size:12.5px;color:var(--text-3);margin-bottom:14px;">Fill in the basics. Horizon Ops executes the create via Microsoft Graph and writes a self-audit entry on save.</div>
         <div style="display:grid;grid-template-columns:1fr;gap:12px;">
           ${q.fields.map(f => `
           <div>
@@ -7725,9 +7725,9 @@ const CMDK_ROUTES = [
   { route:'export',      nm:'Export everything',              desc:'Forensic snapshot · signed bundle',         section:'Navigate', icon:'↓' },
   { route:'mobile',      nm:'Mobile triage',                  desc:'Compact view for on-call admins',           section:'Navigate', icon:'▭' },
   { route:'connect',     nm:'Connect a tenant',               desc:'Onboard a real Entra tenant',               section:'Navigate', icon:'+' },
-  { route:'landing',     nm:'Landing · Why Horizon ID',      desc:'Cockpit narrative + diagram + tour',        section:'Navigate', icon:'★' },
+  { route:'landing',     nm:'Landing · Why Horizon Ops',      desc:'Cockpit narrative + diagram + tour',        section:'Navigate', icon:'★' },
   { route:'trust',       nm:'Trust Center',                   desc:'Permissions · Graph calls · revoke · compliance', section:'Navigate', icon:'⛨' },
-  { route:'selfaudit',   nm:'Horizon ID actions audit',      desc:'Self-audit · who used the cockpit',          section:'Navigate', icon:'≣' },
+  { route:'selfaudit',   nm:'Horizon Ops actions audit',      desc:'Self-audit · who used the cockpit',          section:'Navigate', icon:'≣' },
   { route:'appregscript',nm:'App reg setup script',           desc:'Generate PowerShell for tenant setup',       section:'Navigate', icon:'$' },
   { route:'identities',  nm:'Identities',                     desc:'12,847 users · search the directory',       section:'Navigate', icon:'👥' },
   { route:'lifecycle',   nm:'Lifecycle (JML)',                desc:'Joiner · Mover · Leaver workflows',         section:'Navigate', icon:'⟲' },

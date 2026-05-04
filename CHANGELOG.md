@@ -1,8 +1,12 @@
-# MajorKey Horizon ID — Changelog
+# MajorKey Horizon Ops — Changelog
+
+## v0.4.2 — 2026-05-04 — Rebrand to Horizon Ops
+
+Renamed **Horizon ID** → **Horizon Ops** across the portal, README, manifest, and all copy. Sidebar now reads `MajorKey / HORIZON OPS`. Reflects the operator-surface positioning (482 auto-actions/day, automation-first workspace, 9-workspace cockpit) better than the identity-only framing — the portal manages CA, PIM, governance, lifecycle, sign-ins, and audit, not just identity. PWA install name updated. No functional changes.
 
 ## v0.4.1 — 2026-05-04 — Rebrand to Horizon ID
 
-Renamed the product from **Horizon ID** → **Horizon ID** across the portal, README, manifest, and all copy. Sidebar now reads `MajorKey / HORIZON ID`. Folder name (`majorkey-horizon-id-portal`) and PWA install name updated to match. No functional changes — pure rename to align with the SLED-facing product positioning.
+Renamed **Horizon One** → **Horizon ID** across the portal, README, manifest, and all copy. Sidebar reads `MajorKey / HORIZON ID`. Folder name (`majorkey-horizon-id-portal`) and PWA install name updated. No functional changes — pure rename to align with SLED-facing product positioning.
 
 ## v0.4.0 — 2026-04-30 — Workspace redesign
 
@@ -91,7 +95,7 @@ Goal: replace the Microsoft Entra admin portal with a streamlined, Horizon-brand
 
 ## v0.1.0 — 2026-04-30 — initial build
 
-Single-file light-mode SPA modeled as the MajorKey Horizon ID + Entra Admin Portal experience for a SLED tenant (Cascadia State).
+Single-file light-mode SPA modeled as the MajorKey Horizon Ops + Entra Admin Portal experience for a SLED tenant (Cascadia State).
 
 ### Modules
 - **Dashboard** — KPIs, 24h sign-in chart, provisioning donut, recent activity feed, system health, top apps, risky sign-ins, open access reviews.

@@ -1,6 +1,6 @@
 {
-  "name": "MajorKey Horizon ID",
-  "short_name": "Horizon ID",
+  "name": "MajorKey Horizon Ops",
+  "short_name": "Horizon Ops",
   "description": "The Entra admin cockpit. Sits above your tenant via Microsoft Graph and makes Entra dramatically easier to administer.",
   "start_url": "./index.html",
   "scope": "./",

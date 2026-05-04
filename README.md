@@ -1,19 +1,19 @@
-# MajorKey Horizon ID — the Entra admin cockpit
+# MajorKey Horizon Ops — the Entra admin cockpit
 
 **Sit above your Entra tenant. Make Entra dramatically easier to administer.**
 
-Horizon ID is a Microsoft Graph–based operator surface that turns the daily Entra admin experience from blade-bouncing into a 9-workspace cockpit. Your tenant remains the system of record. Conditional Access still evaluates in Entra. PIM still activates in Entra. Identities still live in Entra. Horizon ID is the cockpit on top — same surfaces (users, groups, devices, CA, identity protection, app regs, governance, sign-ins, audit, lifecycle, provisioning, Entra Connect, plus all the things Entra never built), dramatically better operator experience.
+Horizon Ops is a Microsoft Graph–based operator surface that turns the daily Entra admin experience from blade-bouncing into a 9-workspace cockpit. Your tenant remains the system of record. Conditional Access still evaluates in Entra. PIM still activates in Entra. Identities still live in Entra. Horizon Ops is the cockpit on top — same surfaces (users, groups, devices, CA, identity protection, app regs, governance, sign-ins, audit, lifecycle, provisioning, Entra Connect, plus all the things Entra never built), dramatically better operator experience.
 
 ## Why the cockpit pattern
 
-- **No migration.** Your data never leaves Entra. Revoke Horizon ID's app registration consent anytime — your tenant is unchanged.
-- **No retraining of Entra.** Operators learn Horizon ID; everything they configure still flows through Graph into the same Entra tenant.
-- **No vendor lock-in.** Microsoft remains the system of record. Horizon ID is the workspace.
+- **No migration.** Your data never leaves Entra. Revoke Horizon Ops's app registration consent anytime — your tenant is unchanged.
+- **No retraining of Entra.** Operators learn Horizon Ops; everything they configure still flows through Graph into the same Entra tenant.
+- **No vendor lock-in.** Microsoft remains the system of record. Horizon Ops is the workspace.
 - **Things Entra will never build.** Identity graph, automation hub, mobile triage, persona view-as, before/after diffs on every change, ⌘K palette, AI Copilot grounded in your tenant, scheduled Copilot digests, native Slack/Teams/PagerDuty webhooks.
 
 ## What it gives you over the bare Entra admin portal
 
-| | Entra admin | Horizon ID |
+| | Entra admin | Horizon Ops |
 |---|---|---|
 | Top-level nav items | 50+ blades | 9 workspaces |
 | Click-through to drill | 3-5 clicks | 1 tab swap inside workspace |
@@ -58,7 +58,7 @@ The portal runs against sample data out of the box. To attach it to any producti
 ### 1. Register an Entra app
 
 In your tenant's Microsoft Entra admin center → App registrations → New registration:
-- Name: `Horizon ID Portal`
+- Name: `Horizon Ops Portal`
 - Supported account types: Single tenant (or multi-tenant if needed)
 - Redirect URI: `Single-page application` → `http://localhost:8080` (or your hosting URL)
 
