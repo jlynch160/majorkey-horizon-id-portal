@@ -1429,6 +1429,174 @@ input:focus-visible, select:focus-visible {
   font-weight: 600;
 }
 
+/* ----- Operating-model (Governance > Configuration) ----- */
+.opmodel-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 14px;
+}
+@media (max-width: 1400px) { .opmodel-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 800px)  { .opmodel-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.opmodel-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.18s var(--ease-out), box-shadow 0.18s var(--ease-out), border-color 0.18s var(--ease-out);
+  display: flex; flex-direction: column;
+}
+.opmodel-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--accent);
+  opacity: 0.85;
+}
+.opmodel-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+.opmodel-head {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 16px 14px 10px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 8%, var(--surface)) 0%, var(--surface) 100%);
+}
+.opmodel-icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+.opmodel-title { font-size: 13px; font-weight: 700; color: var(--text); letter-spacing: -0.1px; }
+.opmodel-sub   { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+.opmodel-items {
+  padding: 4px 14px 12px;
+  display: flex; flex-direction: column; gap: 2px;
+  flex: 1;
+}
+.opmodel-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 6px 0;
+  font-size: 12px;
+  border-bottom: 1px dashed var(--line);
+}
+.opmodel-item:last-child { border-bottom: none; }
+.opmodel-item .k { color: var(--text-2); }
+.opmodel-item .v {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--text);
+  font-size: 11.5px;
+}
+.opmodel-foot {
+  padding: 10px 14px;
+  border-top: 1px solid var(--line);
+  font-size: 11px; font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.2px;
+  background: var(--surface-2);
+}
+
+/* ----- Identity Governance status panel ----- */
+.ig-status-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+@media (max-width: 1100px) { .ig-status-grid { grid-template-columns: 1fr; } }
+.ig-col { display: flex; flex-direction: column; gap: 12px; }
+.ig-col-head {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-3);
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 4px;
+}
+.ig-stat { padding: 4px 0; }
+.ig-stat-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 6px;
+}
+.ig-stat-k { font-size: 12.5px; color: var(--text-2); }
+.ig-stat-v {
+  font-size: 18px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.3px;
+}
+.ig-bar {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--bg-2);
+  overflow: hidden;
+}
+.ig-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.6s var(--ease-out);
+}
+.ig-col-viz {
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 18px 14px;
+}
+.ig-donut-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; width: 100%; }
+.ig-donut { width: 220px; height: 220px; max-width: 100%; }
+.ig-legend { display: flex; flex-direction: column; gap: 6px; width: 100%; }
+.ig-legend-row {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 11.5px; color: var(--text-2);
+}
+.ig-legend-row .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  flex-shrink: 0;
+}
+.ig-cfg {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.15s var(--ease);
+}
+.ig-cfg:hover {
+  border-color: var(--mint);
+  background: var(--mint-soft);
+  transform: translateX(2px);
+}
+.ig-cfg-k { flex: 1; font-size: 12.5px; color: var(--text-2); }
+.ig-cfg-v {
+  font-size: 16px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--navy);
+  letter-spacing: -0.2px;
+}
+[data-theme="dark"] .ig-cfg-v { color: var(--mint); }
+.ig-cfg-arrow { color: var(--text-4); }
+.ig-cfg:hover .ig-cfg-arrow { color: var(--mint-deep); }
+
+/* dark-mode tweaks for opmodel cards */
+[data-theme="dark"] .opmodel-card { background: var(--surface); }
+[data-theme="dark"] .opmodel-foot { background: rgba(0,211,148,0.04); }
+[data-theme="dark"] .ig-col-viz { background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%); }
+
 /* ----- Sign-in chart ----- */
 .chart {
   height: 180px;
@@ -4144,13 +4312,170 @@ registerRoute('governance', () => {
     ${moduleTabs('governance')}
 
     <div class="subtabs">
-      <button class="subtab active" onclick="govTab(this,'rev')">Access reviews</button>
+      <button class="subtab active" onclick="govTab(this,'cfg')">Configuration</button>
+      <button class="subtab" onclick="govTab(this,'rev')">Access reviews</button>
       <button class="subtab" onclick="govTab(this,'pkg')">Entitlement packages</button>
       <button class="subtab" onclick="govTab(this,'pim')">Privileged access (PIM)</button>
       <button class="subtab" onclick="govTab(this,'sod')">Separation of duties</button>
     </div>
 
-    <div id="gov-rev">
+    <div id="gov-cfg">
+      <div class="opmodel-grid mb-4">
+        ${[
+          {
+            key:'entities', title:'Entra Entities', sub:'Source-of-truth objects', accent:'#0b2545',
+            icon:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+            items:[['Identities','12,847'],['Accounts','13,201'],['Groups','862'],['Roles · Tier 0–3','78'],['Guests · B2B','412']],
+            route:'identities'
+          },
+          {
+            key:'apps', title:'Applications', sub:'Inbound provisioners + SaaS', accent:'#0ea5e9',
+            icon:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
+            items:[['Enterprise apps','142'],['App registrations','86'],['Workload identities','54'],['Inbound provisioners','7'],['App roles assigned','26 apps']],
+            route:'entapps'
+          },
+          {
+            key:'conn', title:'Connectors', sub:'Pipelines into the tenant', accent:'#00a574',
+            icon:'<path d="M9 17H5a3 3 0 0 1 0-6h4"/><path d="M15 7h4a3 3 0 0 1 0 6h-4"/><line x1="8" y1="14" x2="16" y2="14"/><line x1="8" y1="10" x2="16" y2="10"/>',
+            items:[['HRIS · Workday','Healthy'],['On-prem AD · Cloud Sync','Healthy'],['SCIM outbound · 11 apps','11/11'],['Data Factory pipelines','4'],['Custom REST · IDXchange','2']],
+            route:'connectors'
+          },
+          {
+            key:'wf', title:'Workflows', sub:'Lifecycle automation', accent:'#f59e0b',
+            icon:'<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
+            items:[['Lifecycle Workflows (LWF)','8'],['Joiner · auto','146 / 30d'],['Mover · auto + diff','58 / 30d'],['Leaver · 0-min revoke','41 / 30d'],['Custom JML scripts','3']],
+            route:'lwf'
+          },
+          {
+            key:'gov', title:'Governance', sub:'Reviews · packages · SoD', accent:'#7c3aed',
+            icon:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>',
+            items:[['Access reviews · active','3'],['Reviews · configured','13'],['Entitlement packages','6'],['SoD policies','4'],['Access certifications','5']],
+            route:'governance'
+          },
+          {
+            key:'audit', title:'Audit', sub:'Evidence + reporting', accent:'#e11d48',
+            icon:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/>',
+            items:[['Audit events · 24h','1,284'],['Provisioning logs · 24h','3,612'],['Entitlement changes · 30d','187'],['Policy/CA changes · 30d','42'],['Reports library','21']],
+            route:'logs'
+          }
+        ].map(c => `
+          <div class="opmodel-card" onclick="navigate('${c.route}')" style="--accent:${c.accent};">
+            <div class="opmodel-head">
+              <div class="opmodel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${c.icon}</svg></div>
+              <div>
+                <div class="opmodel-title">${c.title}</div>
+                <div class="opmodel-sub">${c.sub}</div>
+              </div>
+            </div>
+            <div class="opmodel-items">
+              ${c.items.map(([k,v]) => `<div class="opmodel-item"><span class="k">${k}</span><span class="v">${v}</span></div>`).join('')}
+            </div>
+            <div class="opmodel-foot">Open ${c.title} →</div>
+          </div>
+        `).join('')}
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Identity Governance status</div>
+            <div class="card-sub">Live read across your tenant — every governance configuration in one view</div>
+          </div>
+          <div class="flex" style="gap:8px;">
+            <span class="pill pill-mint">● Live · cascadia.gov</span>
+            <button class="btn btn-ghost btn-sm" onclick="toggleTechInfo()">View technical information</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div id="igTechInfo" style="display:none;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;margin-bottom:14px;font-family:var(--mono);font-size:11.5px;">
+            <div style="display:grid;grid-template-columns:140px 1fr;gap:6px 14px;">
+              <span class="muted">Activity ID</span><span>a1f0e84d-3b88-4f90-9cb1-4ec0d2a6f1a2</span>
+              <span class="muted">Job ID</span><span>APIDAAD-b88b354f900c4ae10ae9ce78bbc155d1.a583...</span>
+              <span class="muted">Provisioning API</span><span>https://graph.microsoft.com/v1.0/servicePrincipals/{id}/synchronization/jobs</span>
+              <span class="muted">Last sync</span><span>2026-05-05 09:42:11Z · ✓ Success</span>
+              <span class="muted">Persona</span><span>Identity Admin · jeff.lynch@cascadia.gov</span>
+            </div>
+          </div>
+
+          <div class="ig-status-grid">
+            <!-- LEFT column: tenant-shape KPIs -->
+            <div class="ig-col">
+              <div class="ig-col-head">Tenant shape</div>
+              ${[
+                ['Identities','12,847','#0b2545','94'],
+                ['Guest users','412','#0ea5e9','21'],
+                ['Highly privileged roles','9','#e11d48','9'],
+                ['Groups & teams','862','#7c3aed','62'],
+                ['Applications','142','#0ea5e9','78']
+              ].map(([k,v,c,bar]) => `
+                <div class="ig-stat">
+                  <div class="ig-stat-row"><span class="ig-stat-k">${k}</span><span class="ig-stat-v" style="color:${c};">${v}</span></div>
+                  <div class="ig-bar"><div class="ig-bar-fill" style="width:${bar}%;background:${c};"></div></div>
+                </div>
+              `).join('')}
+            </div>
+
+            <!-- CENTER: visual / donut + flow lines -->
+            <div class="ig-col ig-col-viz">
+              <div class="ig-donut-wrap">
+                <svg viewBox="0 0 220 220" class="ig-donut">
+                  <defs>
+                    <linearGradient id="igGrad1" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#00d394"/><stop offset="100%" stop-color="#0ea5e9"/>
+                    </linearGradient>
+                    <linearGradient id="igGrad2" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#0ea5e9"/>
+                    </linearGradient>
+                    <radialGradient id="igCenter" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="rgba(0,211,148,0.18)"/>
+                      <stop offset="100%" stop-color="rgba(0,211,148,0)"/>
+                    </radialGradient>
+                  </defs>
+                  <!-- background ring -->
+                  <circle cx="110" cy="110" r="86" fill="none" stroke="var(--line)" stroke-width="14"/>
+                  <!-- governance segment (0..280deg of 360 = 78%) -->
+                  <circle cx="110" cy="110" r="86" fill="none" stroke="url(#igGrad1)" stroke-width="14"
+                          stroke-dasharray="421 540" stroke-dashoffset="0" stroke-linecap="round"
+                          transform="rotate(-90 110 110)"/>
+                  <!-- inner subtle wash -->
+                  <circle cx="110" cy="110" r="72" fill="url(#igCenter)"/>
+                  <!-- center label -->
+                  <text x="110" y="100" text-anchor="middle" font-family="Inter" font-size="13" fill="var(--text-3)">Coverage</text>
+                  <text x="110" y="128" text-anchor="middle" font-family="Inter" font-size="34" font-weight="700" fill="var(--text)">78%</text>
+                  <text x="110" y="148" text-anchor="middle" font-family="Inter" font-size="11" fill="var(--text-3)">governance posture</text>
+                </svg>
+                <div class="ig-legend">
+                  <div class="ig-legend-row"><span class="dot" style="background:#00d394;"></span>Workflows + reviews configured</div>
+                  <div class="ig-legend-row"><span class="dot" style="background:#0ea5e9;"></span>Apps with app roles + packages</div>
+                  <div class="ig-legend-row"><span class="dot" style="background:var(--line-2);"></span>Gap · uncovered surface</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT: configurations -->
+            <div class="ig-col">
+              <div class="ig-col-head">Your ID Governance configurations</div>
+              ${[
+                ['Lifecycle workflows configured','8','lwf'],
+                ['Access reviews configured','13','governance'],
+                ['Applications with app roles','26','entapps'],
+                ['Identities with highly privileged roles','27','roles'],
+                ['Access packages for entitlement mgmt','6','governance'],
+                ['SoD policies enforced','4','governance']
+              ].map(([k,v,r]) => `
+                <div class="ig-cfg" onclick="navigate('${r}')">
+                  <span class="ig-cfg-k">${k}</span>
+                  <span class="ig-cfg-v">${v}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ig-cfg-arrow"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="gov-rev" style="display:none;">
       <div class="row row-4 mb-4">
         <div class="kpi"><div class="kpi-label">Active reviews</div><div class="kpi-value">3</div><div class="kpi-delta up">▲ 1 new</div></div>
         <div class="kpi"><div class="kpi-label">Decisions made</div><div class="kpi-value tabular">514</div><div class="muted" style="font-size:11.5px;margin-top:4px;">last 7 days</div></div>
@@ -4269,10 +4594,14 @@ registerRoute('governance', () => {
 window.govTab = function(btn, tab) {
   btn.parentElement.querySelectorAll('.subtab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  ['rev','pkg','pim','sod'].forEach(t => {
+  ['cfg','rev','pkg','pim','sod'].forEach(t => {
     const el = document.getElementById('gov-' + t);
     if (el) el.style.display = (t === tab) ? '' : 'none';
   });
+};
+window.toggleTechInfo = function() {
+  const el = document.getElementById('igTechInfo');
+  if (el) el.style.display = (el.style.display === 'none') ? '' : 'none';
 };
 
 /* =========================================================

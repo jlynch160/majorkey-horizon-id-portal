@@ -1,5 +1,34 @@
 # MajorKey Horizon Ops — Changelog
 
+## v0.5.0 — 2026-05-05 — Governance > Configuration tab (operating-model view)
+
+New `Configuration` subtab inside the Governance workspace (set as the default landing tab). Inspired by the Oxford Computer Group / IDXchange Identity Governance Status reference architecture. Two parts:
+
+### Operating-model grid (top)
+6 column-cards laid out across the workspace, each rendering an Entra operating-model concern with sub-items pulled from live tenant data:
+- **Entra Entities** — identities, accounts, groups, roles, guests
+- **Applications** — enterprise apps, app regs, workload identities, inbound provisioners, app roles
+- **Connectors** — Workday HRIS, on-prem AD Cloud Sync, SCIM outbound, Data Factory, custom REST/IDXchange
+- **Workflows** — LWF count, Joiner/Mover/Leaver auto-counts (30d), custom JML scripts
+- **Governance** — active reviews, configured reviews, entitlement packages, SoD policies, certifications
+- **Audit** — audit events 24h, provisioning logs, entitlement changes, policy/CA changes, reports library
+
+Each card uses an accent color, an icon, and is fully clickable — clicking any card navigates to the matching workspace.
+
+### Identity Governance status panel (bottom)
+Three-column layout matching the reference:
+- **Tenant shape** — KPIs with mini bar charts (identities, guests, privileged roles, groups & teams, applications)
+- **Centered SVG donut** with gradient stroke + radial wash showing 78% governance posture coverage; legend under it
+- **Your ID Governance configurations** — clickable rows for LWFs, access reviews, app-role apps, privileged-role identities, access packages, SoD policies; each row deep-links to the relevant workspace
+
+Includes a `View technical information` toggle that reveals Activity ID / Job ID / Provisioning API endpoint / last sync — same details surfaced by the Microsoft Entra Identity Governance dashboard.
+
+### CSS additions
+- `.opmodel-grid` / `.opmodel-card` — responsive 6→3→2 column grid with accent-bar header, hover lift, dashed-line items
+- `.ig-status-grid` / `.ig-stat` / `.ig-bar` / `.ig-cfg` — three-column status panel with mini bar charts and clickable config rows
+- `.ig-donut` — pure SVG donut (no chart lib) with linear + radial gradients
+- Dark-mode adjustments for all of the above
+
 ## v0.4.2 — 2026-05-04 — Rebrand to Horizon Ops
 
 Renamed **Horizon ID** → **Horizon Ops** across the portal, README, manifest, and all copy. Sidebar now reads `MajorKey / HORIZON OPS`. Reflects the operator-surface positioning (482 auto-actions/day, automation-first workspace, 9-workspace cockpit) better than the identity-only framing — the portal manages CA, PIM, governance, lifecycle, sign-ins, and audit, not just identity. PWA install name updated. No functional changes.
